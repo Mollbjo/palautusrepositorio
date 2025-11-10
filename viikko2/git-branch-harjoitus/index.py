@@ -14,6 +14,8 @@ print(f"{x} - {y} = {erotus(x, y)}")
 logger("lopetetaan ohjelma")
 <<<<<<< HEAD
 
+Uusin muutos main-haarassa
+
 =======
 print("goodbye!") # lisäys bugikorjaus-branchissa
 >>>>>>> bugikorjaus
