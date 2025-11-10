@@ -1,11 +1,5 @@
-from logger import logger
+# tehdään alussa importit
 
-logger("aloitetaan")
-
-x = int(input("luku 1: "))
-y = int(input("luku 2: "))
-
-logger("lopetetaan")
 from logger import logger
 from summa import summa
 from erotus import erotus
