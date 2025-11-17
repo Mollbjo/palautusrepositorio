@@ -22,7 +22,11 @@ class UserService:
 
         user = self._user_repository.find_by_username(username)
 
-        if not user or user.password != password:
+
+        if not user:
+            raise AuthenticationError("User does not exist")
+        
+        if user.password != password:
             raise AuthenticationError("Invalid username or password")
 
         return user

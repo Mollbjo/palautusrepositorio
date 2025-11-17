@@ -17,6 +17,12 @@ Login With Incorrect Password
     Click Button  Login
     Login Should Fail With Message  Invalid username or password
 
+Login With Nonexistent Username
+    Set Username  sepi
+    Set Password  sepi123
+    Click Button  Login
+    Login Should Fail With Message  User does not exist
+
 *** Keywords ***
 Login Should Succeed
     Main Page Should Be Open
