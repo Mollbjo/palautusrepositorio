@@ -10,6 +10,9 @@ ${LOGIN_URL}     http://${SERVER}/login
 ${REGISTER_URL}  http://${SERVER}/register
 ${BROWSER}       chrome
 ${HEADLESS}      false
+${Username}      testuser
+${Password}      Testpassword1
+${Password Confirmation}  Testpassword1
 
 *** Keywords ***
 Open And Configure Browser
@@ -42,3 +45,9 @@ Go To Starting Page
 
 Register Page Should Be Open
     Title Should Be  Register
+
+Welcome Page Should Be Open
+    Title Should Be  Welcome to Ohtu Application!
+
+Go To Register Page
+    Go To  ${REGISTER_URL}
