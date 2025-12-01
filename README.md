@@ -10,3 +10,6 @@ https://github.com/Mollbjo/webcounter
 jokin muutos johonkin tiedostoon
 
 exercise rebasing branches with this change
+
+more changes
+
