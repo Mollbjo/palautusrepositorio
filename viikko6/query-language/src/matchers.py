@@ -66,3 +66,35 @@ class Or:
                 return True
 
         return False
+
+class QueryBuilder:
+    def __init__(self, matchers=None):
+        self._matchers = list(matchers) if matchers is not None else []
+
+    def _with(self, matcher):
+        return QueryBuilder(self._matchers + [matcher])
+
+    def plays_in(self, team):
+        return self._with(PlaysIn(team))
+
+    def has_at_least(self, value, attr):
+        return self._with(HasAtLeast(value, attr))
+
+    def has_fewer_than(self, value, attr):
+        return self._with(HasFewerThan(value, attr))
+
+    def one_of(self, *branches):
+        built_branches = []
+        for branch in branches:
+            if isinstance(branch, QueryBuilder):
+                built_branches.append(branch.build())
+            else:
+                built_branches.append(branch)
+        return self._with(Or(*built_branches))
+
+    def build(self):
+        if not self._matchers:
+            return All()
+        if len(self._matchers) == 1:
+            return self._matchers[0]
+        return And(*self._matchers)
