@@ -2,6 +2,7 @@ from tkinter import Tk
 from kayttoliittyma import Kayttoliittyma
 from sovelluslogiikka import Sovelluslogiikka
 
+#Muutos testi, viiikon 7 tehtävää varten
 
 def main():
     sovellus = Sovelluslogiikka()
