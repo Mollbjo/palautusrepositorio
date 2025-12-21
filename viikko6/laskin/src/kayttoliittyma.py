@@ -1,7 +1,7 @@
 from enum import Enum
 from tkinter import ttk, constants, StringVar
 
-
+#Yksi kommentti vielä viikon 7 tehtävää varten
 class Komento(Enum):
     SUMMA = 1
     EROTUS = 2
